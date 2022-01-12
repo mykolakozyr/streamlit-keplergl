@@ -5,7 +5,7 @@ from keplergl import KeplerGl
 
 
 def keplergl_static(
-    fig: KeplerGl, height: int = 400, width: int = 700, scrolling=False
+    fig: KeplerGl, height: int = 400, scrolling=False
 ) -> components.html:
     """
     Renders `keplergl.KeplerGl` map figure in a Streamlit app. This method is
@@ -17,7 +17,6 @@ def keplergl_static(
         height: Height of result. If `height` is set on the keplergl.KeplerGl` object,
                 that value supersedes the values set with the keyword arguments of this
                 function.
-        width: Width of result.
 
     Example:
         ```python
@@ -31,5 +30,5 @@ def keplergl_static(
         raise TypeError("fig argument has to be a keplergl map object of type keplergl.KeplerGl!")
 
     return components.html(
-        html, height=(fig.height or height) + 10, width=width, scrolling=scrolling
+        html, height=(fig.height or height) + 10, scrolling=scrolling
     )
